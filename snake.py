@@ -4,7 +4,9 @@ GROW_PER_APPLE = 10
 CELL = scene.Size(16, 16)
 SIZE = scene.Size(34, 34)
 
-def convert(dict):  # need a comment here.  converts what to what?
+def convert(dict):
+    """ Subdivides all the value in a dict by 255
+        to make them Pythonista compatible."""
     return {k:tuple([i/255. for i in v]) for k, v in dict.items()}
 
 COLORS = convert({
